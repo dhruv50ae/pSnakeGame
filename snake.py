@@ -50,3 +50,10 @@ class Snake:
             newSeg.penup()
             newSeg.goto(position)
             self.segments.append(newSeg)
+
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(1000, 1000)
+        self.segments.clear()
+        self.createSnake()
+        self.head = self.segments[0]
